@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
+
 int getSquare(int x);
+
 int main(void)
 {
     printf("X is: ");
