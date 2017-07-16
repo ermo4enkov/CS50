@@ -35,14 +35,15 @@ int main(int argc, string argv[])
             } else
             {
                 // если деление по модулю равно нулю, значит просто переходим круг букв
-                printf("%c", start[i] = (start[i] - 27) + gap);
+                printf("%c", start[i] = ((start[i] - gap)-26) + gap);
             }
         }
         else
         {
             if (wrap > 0 )
             {
-                printf("%c", start[i] = ((start[i] - 27)-wrap) + gap);
+                printf("%c", start[i] = start[i] + wrap);
+                // printf("%i", wrap);
             }
         }
     }
