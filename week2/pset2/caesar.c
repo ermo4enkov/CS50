@@ -30,7 +30,7 @@ int main(int argc, string argv[])
             // проверка на то, является ли символ после добавления буквой
             if (isalpha(start[i] = start[i] + gap))
             {
-                printf("%c", start[i] = start[i] + gap-1);
+                printf("%c", start[i] = (start[i]-gap) + gap);
                 // печатаю полученный символ
             } else
             {
@@ -46,6 +46,7 @@ int main(int argc, string argv[])
             }
         }
     }
+    printf("\n");
     return 0;
 }
 
