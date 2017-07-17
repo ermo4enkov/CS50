@@ -13,6 +13,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // превращаю строку в число
     int gap = atoi(argv[1]);
 
     printf("plaintext: ");
@@ -25,31 +26,37 @@ int main(int argc, string argv[])
     for(int i = 0, len = strlen(start); i < len; i++)
     {
 
+        if (!isalpha(start[i]))
+        {
+            printf("%c", start[i]);
+        }
         if (gap < 27)
         {
             // проверка на то, является ли символ после добавления буквой
             if (isalpha(start[i] = start[i] + gap))
             {
-                printf("%c", start[i] = (start[i]-gap) + gap);
                 // печатаю полученный символ
-            } else
+                printf("%c", start[i] = (start[i]-gap) + gap);
+            }
+            else
             {
-                // если деление по модулю равно нулю, значит просто переходим круг букв
+                // если полученный символ не буква, то отматываю назад на 26 символо и приплюсовываю свой гэп
                 printf("%c", start[i] = ((start[i] - gap)-26) + gap);
             }
         }
+        // если гэп больше 27, значит больше круга букв
         else
         {
-            if (wrap > 0 )
+            if (isalpha(start[i] = start[i] + wrap))
             {
-                printf("%c", start[i] = start[i] + wrap);
-                // printf("%i", wrap);
+                printf("%c", start[i] = (start[i] - wrap) + wrap);
+            }
+            else
+            {
+                printf("%c", start[i] = (start[i] - wrap) + wrap - 26);
             }
         }
     }
     printf("\n");
     return 0;
 }
-
-// если деление по модулю на 26 больше нулю, то
-            //
