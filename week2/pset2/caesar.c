@@ -26,21 +26,21 @@ int main(int argc, string argv[])
     for(int i = 0, len = strlen(start); i < len; i++)
     {
 
-        if (!isalpha(start[i]))
-        {
-            printf("%c", start[i]);
-        }
         if (gap < 27)
         {
             // проверка на то, является ли символ после добавления буквой
-            if (isalpha(start[i] = start[i] + gap))
+            if (!isalpha(start[i]))
+            {
+                printf("%c", start[i]);
+            }
+            else if (isalpha(start[i] = start[i] + gap))
             {
                 // печатаю полученный символ
                 printf("%c", start[i] = (start[i]-gap) + gap);
             }
             else
             {
-                // если полученный символ не буква, то отматываю назад на 26 символо и приплюсовываю свой гэп
+                // если полученный символ не буква, то отматываю назад на 26 символов и приплюсовываю свой гэп
                 printf("%c", start[i] = ((start[i] - gap)-26) + gap);
             }
         }
